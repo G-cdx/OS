@@ -22,6 +22,33 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Hello World");
 
+        Button login = new Button("Login");
+        login.setLayoutX(420);
+        login.setLayoutY(380);
+        //取消边框
+        login.setBorder(null);
+        //按钮背景
+        login.setBackground(new Background(new BackgroundFill(Paint.valueOf("#8A8A8A"), new CornerRadii(5), Insets.EMPTY)));
+        login.setTextFill(Color.BLUE);
+        login.setFont(Font.font("sans-serif",25));
+        AnchorPane anchorPane = new AnchorPane();
+        anchorPane.getChildren().addAll(getRectangle(),login);
+
+        /*
+        为“login”按钮设置监听事件，点击了就进入主界面
+         */
+        login.setOnAction(e -> {
+            primaryStage.setScene(new Scene(root));
+        });
+
+        primaryStage.setScene(new Scene(anchorPane,1000,575));
+        primaryStage.show();
+    }
+
+    /**
+     * 获得登录界面上的动画
+     */
+    public Rectangle getRectangle() {
         Rectangle rectParallel = new Rectangle(200,200,50, 50);
         rectParallel.setArcHeight(15);
         rectParallel.setArcWidth(15);
@@ -48,10 +75,10 @@ public class Main extends Application {
         //定义矩形旋转效果
         RotateTransition rotateTransition =
                 new RotateTransition(Duration.millis(2000), rectParallel);
-        rotateTransition.setByAngle(180f);//旋转度数
+        //旋转度数
+        rotateTransition.setByAngle(180f);
         rotateTransition.setCycleCount(4);
         rotateTransition.setAutoReverse(true);
-        //rotateTransition.play();
 
         //矩形的缩放效果
         ScaleTransition scaleTransition =
@@ -68,29 +95,8 @@ public class Main extends Application {
         parallelTransition.setCycleCount(Timeline.INDEFINITE);
         parallelTransition.play();
 
-        Button login = new Button("Login");
-        login.setLayoutX(420);
-        login.setLayoutY(380);
-        //取消边框
-        login.setBorder(null);
-        //按钮背景
-        login.setBackground(new Background(new BackgroundFill(Paint.valueOf("#8A8A8A"), new CornerRadii(5), Insets.EMPTY)));
-        login.setTextFill(Color.BLUE);
-        login.setFont(Font.font("sans-serif",25));
-        AnchorPane anchorPane = new AnchorPane();
-        anchorPane.getChildren().addAll(rectParallel,login);
-
-        /*
-        为“login”按钮设置监听事件，点击了就进入主界面
-         */
-        login.setOnAction(e -> {
-            primaryStage.setScene(new Scene(root));
-        });
-
-        primaryStage.setScene(new Scene(anchorPane,1000,575));
-        primaryStage.show();
+        return rectParallel;
     }
-
 
     public static void main(String[] args) {
         launch(args);
