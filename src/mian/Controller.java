@@ -38,30 +38,4 @@ public class Controller {
             fileStage.show();
         }
     }
-
-    /**
-     双击打开进程管理新窗口
-     */
-    public void process_clicked(MouseEvent mouseEvent) throws IOException {
-        if(mouseEvent.getClickCount() >= 2 && mouseEvent.getButton() == MouseButton.PRIMARY) {
-            Stage fileStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("../process/process.fxml"));
-            fileStage.setTitle("进程管理");
-            fileStage.setScene(new Scene(root));
-            fileStage.show();
-        }
-    }
-
-    /**
-     双击打开存储管理新窗口
-     */
-    public void storage_clicked(MouseEvent mouseEvent) throws IOException {
-        if(mouseEvent.getClickCount() >= 2 && mouseEvent.getButton() == MouseButton.PRIMARY) {
-            Stage fileStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("../storage/storage.fxml"));
-            fileStage.setTitle("存储管理");
-            fileStage.setScene(new Scene(root));
-            fileStage.show();
-        }
-    }
 }
