@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="550.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipment_process_storage.EPSController">
+   <children>
+      <SplitPane dividerPositions="0.1714922048997773" prefHeight="550.0" prefWidth="798.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane maxWidth="200.0" minHeight="0.0" minWidth="150.0" prefHeight="550.0" prefWidth="470.0">
+               <children>
+                  <fx:include source="../storage/storage.fxml"/>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.7380952380952381" orientation="VERTICAL" prefHeight="550.0" prefWidth="667.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <fx:include source="../process/process.fxml"/>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane maxHeight="200.0" minHeight="180.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <fx:include source="../equipment/equipment.fxml"/>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

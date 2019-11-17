@@ -1,0 +1,24 @@
+.background{
+    -fx-background-image: url("../images/main/background.jpg");
+    -fx-background-size: 100%,90%;
+}
+.exit {
+    -fx-background-image: url("../images/exit1.png");
+    -fx-background-size: 100%;
+    -fx-background-insets: 0;
+    -fx-background-color: #4F4F4F;
+}
+.exit:hover {
+    -fx-background-image: url("../images/exit2.png");
+}
+
+.node {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 5;
+}
+.node:hover {
+    -fx-background-color: rgba(215, 239, 233, 0.62);
+    -fx-border-color: #d3f4f4;
+    -fx-border-width: 5;
+}
